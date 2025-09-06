@@ -34,6 +34,31 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
+    // 语言切换功能
+    const langBtn = document.querySelector('.lang-btn');
+    if (langBtn) {
+        langBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetUrl = this.getAttribute('href');
+            
+            // 添加过渡效果
+            document.body.style.opacity = '0.8';
+            document.body.style.transition = 'opacity 0.3s ease';
+            
+            setTimeout(() => {
+                window.location.href = targetUrl;
+            }, 150);
+        });
+    }
+    
+    // 页面加载时的淡入效果
+    document.body.style.opacity = '0';
+    document.body.style.transition = 'opacity 0.5s ease';
+    
+    setTimeout(() => {
+        document.body.style.opacity = '1';
+    }, 100);
+    
     // 高亮当前导航项
     function highlightCurrentNav() {
         const sections = document.querySelectorAll('.section');
