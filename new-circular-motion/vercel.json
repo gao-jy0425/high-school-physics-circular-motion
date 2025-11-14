@@ -1,4 +1,5 @@
 {
+  "rootDirectory": "new-circular-motion",
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
   "installCommand": "npm install",
